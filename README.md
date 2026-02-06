@@ -140,8 +140,11 @@ Per-class STAR files for each job
 counts_matrix.csv
 
 fraction_matrix.csv
-
 RELION-readable STAR files for each class intersection
+
+  **pysankey_input.csv** - this file can be directly used with the pysankey_exmpl_working.py script for generating the Sankey plot. To complete this last step, the pySanKey environment must be set up and activated (https://github.com/anazalea/pySankey/tree/master).
+
+
 
 
 **Notes & Limitations**
@@ -152,15 +155,15 @@ The script assumes standard RELION STAR formatting
 
 Only cross-job comparisons are performed by design
 
-**Planned Extensions
-**
+**Planned Extensions**
+
 Sankey diagrams (raw counts + normalized fractions)
 
 Optional plotting backend selection
 
 Packaging as a Conda package
 
-Support for Refine3D reciprocal analysis
+Support for classifications on symmetry expanded particles
 
 
 **Author**
