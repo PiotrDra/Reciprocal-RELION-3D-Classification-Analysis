@@ -16,6 +16,9 @@ fractional intersection matrix (normalized per source class)
 ✔ Saves RELION-importable STAR files for every class intersection
 ✔ Implemented as a single ready-to-run Python CLI script
 
+<img width="1266" height="1047" alt="image" src="https://github.com/user-attachments/assets/ba2a0996-9690-4623-84c1-f711aca53ccf" />
+
+
 🚫 Sankey plotting is currently disabled (will be added later)
 
 Repository Structure
