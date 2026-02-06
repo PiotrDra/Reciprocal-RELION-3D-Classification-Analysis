@@ -24,26 +24,21 @@ reciprocal_analysis/
 ├── environment.yml
 └── README.md
 
-Requirements
-Software
+**Requirements**
 
+Software:
 Python ≥ 3.9
-
 RELION 3.1 or newer (for STAR file compatibility)
-
 Python dependencies
 
 The script requires only a small, stable Python stack:
-
 python
-
 pandas
-
 numpy
 
 All dependencies are defined in the provided Conda environment file.
 
-Installation
+**Installation**
 1. Clone the repository
 git clone https://github.com/<your-username>/reciprocal_analysis.git
 cd reciprocal_analysis
@@ -54,7 +49,8 @@ conda env create -f environment.yml
 3. Activate the environment
 conda activate relion-reciprocal
 
-Usage
+**Usage**
+
 Basic command
 python reciprocal_analysis.py \
   --class3d_dir /path/to/Relion/Class3D \
@@ -75,17 +71,16 @@ will automatically resolve to:
 job085
 job086
 
-What the Script Does (Pipeline)
-Step 1 — STAR file detection
+**What the Script Does (Pipeline)**
 
+_Step 1 — STAR file detection_
 Finds the last run_itXXX_data.star file in each jobXXX folder
 
 Reads only the data_particles table
 
 Extracts _rlnImageName and _rlnClassNumber
 
-Step 2 — Particle splitting
-
+_Step 2 — Particle splitting_
 Automatically detects all class numbers
 
 Saves per-class particle STAR files:
@@ -94,8 +89,7 @@ job085_class1.star
 job085_class2.star
 ...
 
-Step 3 — Reciprocal comparison
-
+_Step 3 — Reciprocal comparison_
 Compares all classes across different jobs
 
 Skips comparisons from the same job
@@ -104,8 +98,8 @@ Skips comparisons from the same job
 
 ✅ job085 class1 vs job086 class2
 
-Step 4 — Matrices
 
+_Step 4 — Matrices_
 Two CSV files are generated:
 
 Raw particle counts
@@ -115,15 +109,18 @@ Fractional overlaps (normalized per source class)
 fraction_matrix.csv
 
 
+
+
 Each row contains:
 
 job1,job2,class1,class2,value
 
-Step 5 — RELION-compatible intersection STAR files
+_Step 5 — RELION-compatible intersection STAR files_
 
 For every cross-job class pair with overlapping particles, the script generates:
 
 job085_class1_vs_job086_class3.star
+
 
 
 Each STAR file:
@@ -134,7 +131,7 @@ Contains data_particles with correct headers
 
 Is directly importable into RELION
 
-Output Summary
+**Output Summary**
 
 After running the script, you will obtain:
 
@@ -146,7 +143,8 @@ fraction_matrix.csv
 
 RELION-readable STAR files for each class intersection
 
-Notes & Limitations
+
+**Notes & Limitations**
 
 Sankey diagrams are currently disabled
 
@@ -154,8 +152,8 @@ The script assumes standard RELION STAR formatting
 
 Only cross-job comparisons are performed by design
 
-Planned Extensions
-
+**Planned Extensions
+**
 Sankey diagrams (raw counts + normalized fractions)
 
 Optional plotting backend selection
@@ -164,7 +162,8 @@ Packaging as a Conda package
 
 Support for Refine3D reciprocal analysis
 
-Author
+
+**Author**
 
 Developed by Piotr Draczkowski
 with iterative refinement and automation support.
