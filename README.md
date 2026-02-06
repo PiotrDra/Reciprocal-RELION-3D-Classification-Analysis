@@ -22,9 +22,13 @@ fractional intersection matrix (normalized per source class)
 🚫 Sankey plotting is currently disabled (will be added later)
 
 Repository Structure
+
 reciprocal_analysis/
+
 ├── reciprocal_analysis.py
+
 ├── environment.yml
+
 └── README.md
 
 **Requirements**
